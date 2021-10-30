@@ -45,8 +45,6 @@ public class LeverRotate : MonoBehaviour
                         {
                             isRotate = true;
 
-                            Debug.Log("레버회전시작");
-
                             break;
                         }
                     }

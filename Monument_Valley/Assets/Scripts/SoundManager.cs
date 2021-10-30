@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class Sound
-    {
-        public AudioClip audio;
-        public bool isBGM = false;
-    }
-
     public static SoundManager instance;
 
     // sound는 list를 이용해 관리
@@ -86,4 +79,11 @@ public class SoundManager : MonoBehaviour
             }
         }
     }
+}
+
+[System.Serializable]
+public class Sound
+{
+    public AudioClip audio;
+    public bool isBGM = false;
 }
