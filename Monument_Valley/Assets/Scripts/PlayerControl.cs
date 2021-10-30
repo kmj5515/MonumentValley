@@ -26,7 +26,7 @@ public class PlayerControl : MonoBehaviour
     {
         RayCurrentCube();
 
-        moveSpeed = 3.0f;
+        moveSpeed = 2.5f;
     }
 
     // Update is called once per frame

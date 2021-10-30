@@ -10,6 +10,7 @@ public class CubeControl : MonoBehaviour
     [Space]
     // 길찾기 할때 지나온 길
     public Transform previousBlock;
+    [Space]
     public float moveSpeed = 0.5f;
     public bool movingGround = false;
 
@@ -33,7 +34,7 @@ public class CubeControl : MonoBehaviour
     //걷는 좌표 포인트 반환
     public Vector3 GetWalkPoint()
     {
-        return transform.position + transform.up * moveSpeed;
+        return (transform.position + transform.up * moveSpeed);
     }
 }
 

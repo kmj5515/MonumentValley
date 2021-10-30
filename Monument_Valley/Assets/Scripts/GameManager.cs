@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public Image fadeImg;
+    public Image fadeReload;
+    public Image fadeIntro;
     public List<Text> fadeText = new List<Text>();
 
     private bool isClear;
@@ -59,6 +61,10 @@ public class GameManager : MonoBehaviour
                         // 글자 페이드 아웃
                         StartCoroutine(FadeOut(fadeText[i], 0, 0.65f));
                     }
+
+                    // UI 페이드 인
+                    StartCoroutine(FadeIn(fadeReload, 1.0f, 0.65f));
+                    StartCoroutine(FadeIn(fadeIntro, 1.0f, 0.65f));
 
                     // 검은 화면 페이드 아웃
                     StartCoroutine(FadeOut(fadeImg, 0, 0.65f));
