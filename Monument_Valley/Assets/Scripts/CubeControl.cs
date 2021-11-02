@@ -28,6 +28,11 @@ public class CubeControl : MonoBehaviour
                 Gizmos.color = Color.green;
                 Gizmos.DrawLine(GetWalkPoint(), possiblePaths[i].target.GetComponent<CubeControl>().GetWalkPoint());
             }
+            else if (!possiblePaths[i].active)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(GetWalkPoint(), possiblePaths[i].target.GetComponent<CubeControl>().GetWalkPoint());
+            }
         }
     }
 
