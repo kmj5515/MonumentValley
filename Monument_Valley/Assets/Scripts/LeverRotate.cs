@@ -79,33 +79,11 @@ public class LeverRotate : MonoBehaviour
             rotateAngle();
         }
 
-        // 각도 확인 후 큐브 경로 설정
-        //if ()
-        //{
-        // 각도 확인 후 큐브 경로 설정
-        //for (int i = 0; i < pathCubes.Count; i++)
-        //{
-        //    for (int j = 0; j < pathCubes[i].path.Count; j++)
-        //    {
-        //        pathCubes[i].path[j].block.possiblePaths[pathCubes[i].path[j].index - 1].active =
-        //            transform.eulerAngles.Equals(pathCubes[i].angle);
-        //    }
-        //}
-        //}
-        //
-        //for (int i = 0; i < ctrl.possiblePaths.Count; i++)
-        //{
-        //    ctrl.possiblePaths[i].active = transform.eulerAngles.Equals(90);
-        //}
-
-
         // 마우스를 떼면 더 이상 움직이지 않음
         if (Input.GetMouseButtonUp(0))
         {   
             isRotate = false;
             SoundManager.instance.play("Rotate Sound_1", 0.5f);
-
-
         }    
     }
 
@@ -155,5 +133,30 @@ public class LeverRotate : MonoBehaviour
         {
             setAngle(90);
         }
+    }
+
+    IEnumerator Rotate(float startAngle, float finalAngle)
+    {
+        float movetime = 0f;
+
+        while (movetime < 1.0f)
+        {
+            float angle = Mathf.Lerp(startAngle, finalAngle, movetime);
+
+            setAngle(angle);
+
+            movetime += Time.deltaTime * rotSpeed;
+
+            if (movetime >= 1.0f) setAngle(finalAngle);
+
+            yield return null;
+        }
+        
+        yield return null;
+    }
+
+    public void autoRotate(float targetAngle)
+    {
+        StartCoroutine(Rotate(getAngle(), targetAngle));
     }
 }

@@ -156,6 +156,11 @@ public class PlayerControl : MonoBehaviour
         else
         {
             LayerCheck(nextCube.transform);
+
+            if (currentCube.Equals(GameManager.instance.clearCube))
+            {
+                GameManager.instance.Clear = true;
+            }
         }
 
         timing += Time.deltaTime * moveSpeed;

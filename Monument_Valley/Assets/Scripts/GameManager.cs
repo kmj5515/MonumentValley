@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [Space]
+    public Transform clearCube;
+
     public Image fadeImg;
     public Image fadeReload;
     public Image fadeIntro;
     public List<Text> fadeText = new List<Text>();
 
+    [Space]
     private bool isClear;
     private bool isReady;
 
@@ -81,6 +85,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Å¬¸®¾î 
         if (isClear && isReady)
         {
             StartCoroutine(FadeIn(fadeImg, 1.0f, 0.4f));

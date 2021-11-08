@@ -8,8 +8,8 @@ public class ItemEvent : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //target.GetComponent<LeverRotate>().autoRotate(90.0f, false);
+        target.GetComponent<LeverRotate>().autoRotate(90f);
 
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
